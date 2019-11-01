@@ -17,8 +17,8 @@ public class DropLowGradeStrategy implements GradingStrategy {
 		int index = 0;
 		
 		for(Grade current : gradeValues) {
-			if(gradeValues.get(index).getValue() < current.getValue()) {
-				index++;
+			if(gradeValues.get(index).getValue() > current.getValue()) {
+				index = gradeValues.indexOf(current);
 			}
 		}
 		
