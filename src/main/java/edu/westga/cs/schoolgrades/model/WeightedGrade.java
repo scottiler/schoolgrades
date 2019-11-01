@@ -11,7 +11,7 @@ public class WeightedGrade implements Grade{
 	}
 	
 	@Override
-	public double getGrade() {
+	public double getValue() {
 		return this.gradeValue * this.weight;
 	}
 
