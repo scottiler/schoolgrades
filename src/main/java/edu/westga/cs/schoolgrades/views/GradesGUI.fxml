@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs.schoolgrades.controllers.SchoolGradesController">
    <children>
-      <VBox layoutX="-7.0" layoutY="-5.0" prefHeight="400.0" prefWidth="600.0">
+      <VBox layoutX="-1.0" layoutY="-5.0">
          <children>
             <MenuBar>
               <menus>
@@ -27,9 +27,9 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <HBox prefHeight="220.0" prefWidth="600.0">
+            <HBox prefHeight="290.0" prefWidth="600.0">
                <children>
-                  <VBox prefHeight="220.0" prefWidth="158.0" spacing="10.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="220.0" prefWidth="170.0" spacing="10.0">
                      <children>
                         <Label prefHeight="20.0" prefWidth="134.0" text="Quizzies">
                            <font>
@@ -50,6 +50,44 @@
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="220.0" prefWidth="210.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="134.0" text="Homeworks">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ListView prefHeight="178.0" prefWidth="148.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="157.0" text="HW Subtotal" textAlignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="220.0" prefWidth="210.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="134.0" text="Exams">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="157.0" text="Exam Subtotal" textAlignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </VBox>
                </children>
             </HBox>
