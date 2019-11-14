@@ -16,9 +16,9 @@ public class QuizSubtotal {
 	}
 
 	/**
-	 * Returns doubleegerProperty quizTotal
+	 * Returns doubleProperty quizTotal
 	 * 
-	 * @return doubleegerProperty quizTotal
+	 * @return doubleProperty quizTotal
 	 */
 	public DoubleProperty quizTotalProperty() {
 		return this.quizTotal;
