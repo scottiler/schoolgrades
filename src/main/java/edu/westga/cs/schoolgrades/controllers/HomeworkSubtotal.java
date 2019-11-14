@@ -29,7 +29,7 @@ private final DoubleProperty homeworkTotal = new SimpleDoubleProperty();
 	 * 
 	 * @param total Value out a score
 	 */
-	public void sethomeworkTotal(double total) {
+	public void setHomeworkTotal(double total) {
 		this.homeworkTotal.set(total);
 	}
 	
@@ -38,7 +38,7 @@ private final DoubleProperty homeworkTotal = new SimpleDoubleProperty();
 	 * 
 	 * @return Value of homeworkTotal as a string
 	 */
-	public String gethomeworkTotalString () {
+	public String getHomeworkTotalString () {
 		return this.homeworkTotal.toString();
 	}
 }

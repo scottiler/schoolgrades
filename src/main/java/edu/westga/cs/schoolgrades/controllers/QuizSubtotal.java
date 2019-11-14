@@ -29,7 +29,7 @@ public class QuizSubtotal {
 	 * 
 	 * @param total Value out a score
 	 */
-	public void setquizTotal(double total) {
+	public void setQuizTotal(double total) {
 		this.quizTotal.set(total);
 	}
 	
@@ -38,7 +38,7 @@ public class QuizSubtotal {
 	 * 
 	 * @return Value of quizTotal as a string
 	 */
-	public String getquizTotalString () {
+	public String getQuizTotalString () {
 		return this.quizTotal.toString();
 	}
 }
