@@ -21,7 +21,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Data">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Add quiz" />
+                    <MenuItem fx:id="addQuiz" mnemonicParsing="false" onAction="#addQuiz" text="Add quiz" />
                         <MenuItem mnemonicParsing="false" text="Add homework" />
                         <MenuItem mnemonicParsing="false" text="Add exam" />
                   </items>
@@ -37,13 +37,13 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <ListView fx:id="quizList" prefHeight="200.0" prefWidth="200.0" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="157.0" text="Quiz Subtotal" textAlignment="CENTER">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField />
+                        <TextField fx:id="quizSubtotal" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -101,6 +101,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <TextField />
             <Button mnemonicParsing="false" text="Recalculate" />
          </children>
          <padding>
