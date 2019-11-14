@@ -23,7 +23,7 @@
                   <items>
                     <MenuItem fx:id="addQuiz" mnemonicParsing="false" onAction="#addQuiz" text="Add quiz" />
                         <MenuItem fx:id="addHomework" mnemonicParsing="false" onAction="#addHomework" text="Add homework" />
-                        <MenuItem mnemonicParsing="false" text="Add exam" />
+                        <MenuItem fx:id="addExam" mnemonicParsing="false" onAction="#addExam" text="Add exam" />
                   </items>
                 </Menu>
               </menus>
@@ -43,7 +43,10 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="quizSubtotal" />
+                        <TextField fx:id="quizSubtotal">
+                           <font>
+                              <Font name="Verdana Bold" size="14.0" />
+                           </font></TextField>
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -65,7 +68,10 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="homeworkSubtotal" />
+                        <TextField fx:id="homeworkSubtotal">
+                           <font>
+                              <Font name="Verdana Bold" size="14.0" />
+                           </font></TextField>
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -78,13 +84,16 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <ListView fx:id="examList" prefHeight="200.0" prefWidth="200.0" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="157.0" text="Exam Subtotal" textAlignment="CENTER">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField />
+                        <TextField fx:id="examSubtotal">
+                           <font>
+                              <Font name="Verdana Bold" size="14.0" />
+                           </font></TextField>
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -101,7 +110,10 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField />
+            <TextField fx:id="finalText" alignment="CENTER_RIGHT">
+               <font>
+                  <Font name="Verdana Bold" size="16.0" />
+               </font></TextField>
             <Button fx:id="recalculate" mnemonicParsing="false" onAction="#recalculate" text="Recalculate" />
          </children>
          <padding>
