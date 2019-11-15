@@ -3,8 +3,14 @@ package edu.westga.cs.schoolgrades.controllers;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
+/**
+ * Creates an DoubleProperty object
+ * 
+ * @author Perry Iler
+ * @version Fall 2019
+ */
 public class FinalGrade {
-private final DoubleProperty finalGrade = new SimpleDoubleProperty();
+	private final DoubleProperty finalGrade = new SimpleDoubleProperty();
 	
 	/**
 	 * Return double value of finalGrade

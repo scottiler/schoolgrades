@@ -3,8 +3,14 @@ package edu.westga.cs.schoolgrades.controllers;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
+/**
+ * Creates an DoubleProperty object
+ * 
+ * @author Perry Iler
+ * @version Fall 2019
+ */
 public class HomeworkSubtotal {
-private final DoubleProperty homeworkTotal = new SimpleDoubleProperty();
+	private final DoubleProperty homeworkTotal = new SimpleDoubleProperty();
 	
 	/**
 	 * Return double value of homeworkTotal

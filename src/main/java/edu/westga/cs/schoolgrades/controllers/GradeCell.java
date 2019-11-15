@@ -6,6 +6,12 @@ import javafx.scene.control.ListCell;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+/**
+ * Provides formatting for the cellFactory of a ListView of grades.
+ * 
+ * @author Perry Iler
+ * @version Fall 2019
+ */
 public class GradeCell extends ListCell<Grade>{
 	@Override
 	public void updateItem(Grade item, boolean empty) {

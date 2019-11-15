@@ -37,13 +37,13 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="quizList" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView fx:id="quizList" accessibleText="setAccessibleText(String.valueOf(item.getValue()))" prefHeight="200.0" prefWidth="200.0" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="157.0" text="Quiz Subtotal" textAlignment="CENTER">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="quizSubtotal">
+                        <TextField fx:id="quizSubtotal" alignment="CENTER_RIGHT">
                            <font>
                               <Font name="Verdana Bold" size="14.0" />
                            </font></TextField>
@@ -62,13 +62,13 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="homeworkList" prefHeight="200.0" prefWidth="148.0" />
+                        <ListView fx:id="homeworkList" accessibleText="setAccessibleText(String.valueOf(item.getValue()))" prefHeight="200.0" prefWidth="148.0" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="157.0" text="HW Subtotal" textAlignment="CENTER">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="homeworkSubtotal">
+                        <TextField fx:id="homeworkSubtotal" alignment="CENTER_RIGHT">
                            <font>
                               <Font name="Verdana Bold" size="14.0" />
                            </font></TextField>
@@ -84,13 +84,13 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="examList" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView fx:id="examList" accessibleText="setAccessibleText(String.valueOf(item.getValue()))" prefHeight="200.0" prefWidth="200.0" />
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="157.0" text="Exam Subtotal" textAlignment="CENTER">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="examSubtotal">
+                        <TextField fx:id="examSubtotal" alignment="CENTER_RIGHT">
                            <font>
                               <Font name="Verdana Bold" size="14.0" />
                            </font></TextField>
@@ -114,7 +114,7 @@
                <font>
                   <Font name="Verdana Bold" size="16.0" />
                </font></TextField>
-            <Button fx:id="recalculate" mnemonicParsing="false" onAction="#recalculate" text="Recalculate" />
+            <Button fx:id="recalculate" accessibleText="recalculate" mnemonicParsing="false" onAction="#recalculate" text="Recalculate" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -3,6 +3,12 @@ package edu.westga.cs.schoolgrades.controllers;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
+/**
+ * Creates an DoubleProperty object
+ * 
+ * @author Perry Iler
+ * @version Fall 2019
+ */
 public class ExamSubtotal {
 	private final DoubleProperty examTotal = new SimpleDoubleProperty();
 	

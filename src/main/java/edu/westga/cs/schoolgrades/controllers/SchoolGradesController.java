@@ -27,6 +27,12 @@ import javafx.scene.control.TextInputDialog;
 import javafx.util.Callback;
 import javafx.util.converter.NumberStringConverter;
 
+/**
+ * Controller for GradesGui
+ * 
+ * @author Perry Iler
+ * @version Fall 2019
+ */
 public class SchoolGradesController implements Initializable{
 	private ObservableList<Grade> quizGrades;
 	private ObservableList<Grade> homeworkGrades;
@@ -54,35 +60,29 @@ public class SchoolGradesController implements Initializable{
 	@FXML public TextField examSubtotal;
 	@FXML public TextField finalText;
 
-	private void init() {
-		this.quizGrades = FXCollections.observableArrayList();
-		this.homeworkGrades = FXCollections.observableArrayList();
-		this.examGrades = FXCollections.observableArrayList();
-		this.finalGrades = FXCollections.observableArrayList();
-		this.quizList.setItems(this.quizGrades);
-		this.homeworkList.setItems(this.homeworkGrades);
-		this.examList.setItems(this.examGrades);
-		this.quizSubtotal.setEditable(false);
-		this.homeworkSubtotal.setEditable(false);
-		this.examSubtotal.setEditable(false);
-		
-	}
-	
+	/**
+	 * Adds a quiz grade the quiz listview via user text input dialog box
+	 */
 	public void addQuiz() {
 		TextInputDialog getQuiz = new TextInputDialog();
 		getQuiz.setTitle("Quiz Grade");
 		getQuiz.setContentText("Enter the quiz grade.");
 		Optional<String> result = getQuiz.showAndWait();
 		result.ifPresent(e -> this.quizGrades.add(new SimpleGrade(Double.parseDouble(result.get()))));
-		
 	}
 	
+	/**
+	 * Sets the quizTotal DoubleProperty
+	 */
 	public void setQuizSubtotal() {
 		GradeCalculationStrategy subtotal = new SumOfGradesStrategy();
 		this.quizSum = new SimpleGrade(subtotal.calculate(this.quizGrades));
 		this.quizTotal.setQuizTotal(this.quizSum.getValue());
 	}
 	
+	/**
+	 * Adds a homework grade the homework listview via user text input dialog box
+	 */
 	public void addHomework() {
 		TextInputDialog getHw = new TextInputDialog();
 		getHw.setTitle("HomeWork Grade");
@@ -91,6 +91,9 @@ public class SchoolGradesController implements Initializable{
 		result.ifPresent(e -> this.homeworkGrades.add(new SimpleGrade(Double.parseDouble(result.get()))));
 	}
 	
+	/**
+	 * Sets the homeworkTotal DoubleProperty
+	 */
 	public void setHomeworkSubtotal() {
 		GradeCalculationStrategy child = new AverageOfGradesStrategy();
 		GradeCalculationStrategy subtotal = new DropLowestStrategy(child);
@@ -98,7 +101,9 @@ public class SchoolGradesController implements Initializable{
 		this.homeworkTotal.setHomeworkTotal(this.hwSum.getValue());
 	}
 	
-	
+	/**
+	 * Adds a exam grade the exam listview via user text input dialog box
+	 */
 	public void addExam() {
 		TextInputDialog getExam = new TextInputDialog();
 		getExam.setTitle("Examk Grade");
@@ -107,12 +112,18 @@ public class SchoolGradesController implements Initializable{
 		result.ifPresent(e -> this.examGrades.add(new SimpleGrade(Double.parseDouble(result.get()))));
 	}
 	
+	/**
+	 * Sets the examTotal DoubleProperty
+	 */
 	public void setExamSoubtotal() {
 		GradeCalculationStrategy subtotal = new AverageOfGradesStrategy();
 		this.examSum = new SimpleGrade(subtotal.calculate(this.examGrades));
 		this.examTotal.setExamTotal(this.examSum.getValue());
 	}
 	
+	/**
+	 * Sets the finalGrade DoubleProperty
+	 */
 	public void setFinalGrade() {
 		this.finalGrades.addAll(new WeightedGrade(this.quizSum, .2), new WeightedGrade(this.hwSum, .3), new WeightedGrade(this.examSum, .5));
 		GradeCalculationStrategy finalTotal = new SumOfGradesStrategy();
@@ -120,6 +131,9 @@ public class SchoolGradesController implements Initializable{
 		this.finalGrade.setfinalGrade(this.grade.getValue());
 	}
 	
+	/**
+	 * Call all set methods to update the textfields
+	 */
 	public void recalculate() {
 		this.setQuizSubtotal();
 		this.setHomeworkSubtotal();
@@ -156,7 +170,17 @@ public class SchoolGradesController implements Initializable{
 		this.homeworkSubtotal.textProperty().bindBidirectional(this.homeworkTotal.homeworkTotalProperty(), new NumberStringConverter());
 		this.examSubtotal.textProperty().bindBidirectional(this.examTotal.examTotalProperty(), new NumberStringConverter());
 		this.finalText.textProperty().bindBidirectional(this.finalGrade.finalGradeProperty(), new NumberStringConverter());
-		this.init();
+		this.quizGrades = FXCollections.observableArrayList();
+		this.homeworkGrades = FXCollections.observableArrayList();
+		this.examGrades = FXCollections.observableArrayList();
+		this.finalGrades = FXCollections.observableArrayList();
+		this.quizList.setItems(this.quizGrades);
+		this.homeworkList.setItems(this.homeworkGrades);
+		this.examList.setItems(this.examGrades);
+		this.quizSubtotal.setEditable(false);
+		this.homeworkSubtotal.setEditable(false);
+		this.examSubtotal.setEditable(false);
+		this.finalText.setEditable(false);
 	}
 
 }
